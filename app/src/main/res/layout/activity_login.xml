@@ -18,15 +18,15 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.418"
+        app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.126" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="224dp"
-        android:layout_height="65dp"
+        android:layout_width="206dp"
+        android:layout_height="64dp"
         android:text="LOGIN"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,16 +35,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.698" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="135dp"
-        android:layout_height="57dp"
-        android:text="SIGN UP"
+
+    <TextView
+        android:id="@+id/registerTextView"
+        android:layout_width="302dp"
+        android:layout_height="29dp"
+        android:layout_gravity="center_horizontal"
+        android:text="Don't have an account? Sign up here!"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.82" />
+        app:layout_constraintVertical_bias="0.78" />
 
     <EditText
         android:id="@+id/editTextTextPassword"
@@ -57,7 +62,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="wrap_content"
