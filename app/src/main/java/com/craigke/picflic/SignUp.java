@@ -158,6 +158,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
             return false;
         }
         return true;
+
     }
 
     private void createFirebaseUserProfile(final FirebaseUser user){
