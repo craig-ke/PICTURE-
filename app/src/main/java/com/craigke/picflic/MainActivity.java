@@ -47,14 +47,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
-//   options menu
+    //   options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
     }
-//    logout functionalty
+    //    logout functionalty
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-//EVent Listners that display User name and OnStop destroys
+    //EVent Listners that display User name and OnStop destroys
     @Override
     public void onStart() {
         super.onStart();
