@@ -9,24 +9,48 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
+    private DatabaseReference mSearchedLocationReference;
 
-    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.findLoginButton)
+    Button mFindLoginButton;
+    @BindView(R.id.findAboutButton) Button mFindAboutButton;
+    @BindView(R.id.locationEditText)
+    EditText mLocationEditText;
+    @BindView(R.id.appNameTextView)
+    TextView mAppNameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        mSearchedLocationReference = FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child(Constants.FIREBASE_QUERY_INDEX);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mFindLoginButton.setOnClickListener((View.OnClickListener) this);
+        mFindAboutButton.setOnClickListener((View.OnClickListener) this);
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -47,6 +71,26 @@ public class MainActivity extends AppCompatActivity {
             }
         };
     }
+
+
+    @Override
+    public void onClick(View v) {
+        if(v == mFindLoginButton) {
+            String location = mLocationEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+            intent.putExtra("location", location);
+            startActivity(intent);
+            Toast.makeText(MainActivity.this, "Hello there,We cherish you", Toast.LENGTH_LONG).show();
+        }
+        if(v == mFindAboutButton){
+            String location = mLocationEditText.getText().toString();
+            Intent intent = new Intent(MainActivity.this, ActivityFolder3.class);
+            startActivity(intent);
+            Toast.makeText(MainActivity.this, "Hello there,We cherish you", Toast.LENGTH_LONG).show();
+        }
+    }
+
+
     //   options menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

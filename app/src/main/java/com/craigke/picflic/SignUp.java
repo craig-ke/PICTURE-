@@ -32,12 +32,15 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
 
-        @BindView(R.id.signup_button) Button mCreateUserButton;
-        @BindView(R.id.Person_Name) EditText mNameEditText;
-        @BindView(R.id.edit_Email) EditText mEmailEditText;
-        @BindView(R.id.editTextPassword2) EditText mPasswordEditText;
-        @BindView(R.id.editPassword3) EditText mConfirmPasswordEditText;
-        @BindView(R.id.loginTextViewtextView) TextView mLoginTextView;
+    @BindView(R.id.signup_button)
+    Button mCreateUserButton;
+    @BindView(R.id.Person_Name)
+    EditText mNameEditText;
+    @BindView(R.id.edit_Email) EditText mEmailEditText;
+    @BindView(R.id.editTextPassword2) EditText mPasswordEditText;
+    @BindView(R.id.editPassword3) EditText mConfirmPasswordEditText;
+    @BindView(R.id.loginTextViewtextView)
+    TextView mLoginTextView;
 
 
 
@@ -179,3 +182,5 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
     }
 
 }
+
+
