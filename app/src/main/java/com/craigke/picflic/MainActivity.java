@@ -32,15 +32,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private DatabaseReference mSearchedLocationReference;
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
-    private String mRecentAddress;
 
-    @BindView(R.id.findLoginButton)
-    Button mFindLoginButton;
-    @BindView(R.id.findAboutButton) Button mFindAboutButton;
-    @BindView(R.id.locationEditText)
-    EditText mLocationEditText;
+
+    @BindView(R.id.findPicturesButton)
+    Button mFindPicturesButton;
+    @BindView(R.id.savedpicturesButton) Button mFindAboutButton;
     @BindView(R.id.appNameTextView)
     TextView mAppNameTextView;
 
@@ -82,16 +78,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(v == mFindLoginButton) {
-            String location = mLocationEditText.getText().toString();
+        if(v == mFindPicturesButton) {
             Intent intent = new Intent(MainActivity.this, SplashActivity.class);
-            intent.putExtra("location", location);
-            startActivity(intent);
-            Toast.makeText(MainActivity.this, "Hello there,We cherish you", Toast.LENGTH_LONG).show();
-        }
-        if(v == mFindAboutButton){
-            String location = mLocationEditText.getText().toString();
-            Intent intent = new Intent(MainActivity.this, ActivityFolder3.class);
             startActivity(intent);
             Toast.makeText(MainActivity.this, "Hello there,We cherish you", Toast.LENGTH_LONG).show();
         }

@@ -9,57 +9,31 @@
         android:scaleType="centerCrop"
         android:src="@drawable/mine" />
 
-    <TextView
-        android:id="@+id/appNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
-        android:fontFamily="times new roman"
-        android:text="PICFLIC"
+    <Button
+        android:id="@+id/findPicturesButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_above="@+id/savedpicturesButton"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="80dp"
+        android:background="@color/colorAccent"
+        android:text="Find PICTURES"
         android:textColor="@color/colorTextIcons"
-        android:textSize="50sp"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/locationEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/findLoginButton"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="66dp"
-        android:background="@color/colorTextIcons"
-        android:hint="Enter a location"
-        android:padding="5dp"
-        android:inputType="text"
-        android:autofillHints="" />
+        android:visibility="visible" />
 
     <Button
-        android:id="@+id/findAboutButton"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/savedpicturesButton"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginLeft="125dp"
-        android:layout_marginEnd="126dp"
-        android:layout_marginRight="126dp"
-        android:layout_marginBottom="33dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="83dp"
         android:background="@color/colorAccent"
-        android:text="About Us"
-        android:textColor="@color/colorTextIcons" />
-
-    <Button
-        android:id="@+id/findLoginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="125dp"
-        android:background="@color/colorAccent"
-        android:text="Search"
-        android:textColor="@color/colorTextIcons" />
+        android:text="My Saved PICTURES"
+        android:textColor="@color/colorTextIcons"
+        android:visibility="visible" />
 </RelativeLayout>
