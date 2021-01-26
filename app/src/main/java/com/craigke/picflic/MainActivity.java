@@ -85,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+
     //   options menu LOGOUT & SEARCH
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -92,7 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         inflater.inflate(R.menu.menu_main, menu);
         inflater.inflate(R.menu.menu_search, menu);
         return super.onCreateOptionsMenu(menu);
-
 
     }
     //    logout functionalty
