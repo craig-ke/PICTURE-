@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -37,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.appNameTextView)
     TextView mAppNameTextView;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -49,10 +51,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mFindLoginButton.setOnClickListener((View.OnClickListener) this);
-        mFindAboutButton.setOnClickListener((View.OnClickListener) this);
+
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
+
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 mAuth = FirebaseAuth.getInstance();
@@ -66,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
                         } else {
 
                         }
+
                     }
                 };
             }
         };
     }
-
 
     @Override
     public void onClick(View v) {
@@ -90,12 +92,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-    //   options menu
+    //   options menu LOGOUT & SEARCH
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
+        inflater.inflate(R.menu.menu_search, menu);
         return super.onCreateOptionsMenu(menu);
     }
     //    logout functionalty
