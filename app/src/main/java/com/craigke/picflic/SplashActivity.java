@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.craigke.picflic.adapters.ListImageAdapter;
 import com.craigke.picflic.api.ApiClient;
 import com.craigke.picflic.api.UnsplashInterface;
 import com.craigke.picflic.model.Result;

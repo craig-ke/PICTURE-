@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PICFLIC">
         <activity android:name=".ActivityFolder3"></activity>
-        <activity android:name=".ListImageAdapter" />
+        <activity android:name=".adapters.ListImageAdapter" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".SignUp" />
         <activity android:name=".LoginActivity">
