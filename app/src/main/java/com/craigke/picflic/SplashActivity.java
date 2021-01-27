@@ -59,9 +59,22 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 addToSharedPreferences(query);
-                getRestaurants(query);
+                getLocation(query);
                 return false;
             }
+
+            private void getLocation(String query) {
+                
+            }
+
+            private void addToSharedPreferences(String query) {
+
+            }
+
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
 
             @Override
             public boolean onQueryTextChange(String newText) {

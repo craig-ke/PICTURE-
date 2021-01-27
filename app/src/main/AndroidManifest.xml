@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PICFLIC">
-        <activity android:name=".ActivityFolder3"></activity>
+        <activity android:name=".SavedImagesActivity"></activity>
+        <activity android:name=".ActivityFolder3" />
         <activity android:name=".adapters.ListImageAdapter" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".SignUp" />

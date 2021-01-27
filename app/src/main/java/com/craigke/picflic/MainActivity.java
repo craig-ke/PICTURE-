@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @BindView(R.id.findPicturesButton)
     Button mFindPicturesButton;
-    @BindView(R.id.savedpicturesButton) Button mFindAboutButton;
+    @BindView(R.id.savedpicturesButton) Button mFindSavedButton;
     @BindView(R.id.appNameTextView)
     TextView mAppNameTextView;
 
@@ -52,6 +53,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        ButterKnife.bind(this);
+//
+////        Typeface ostrichFont = Typeface.createFromAsset(getAssets(), "fonts/ostrich-regular.ttf");
+//        mAppNameTextView.setTypeface(ostrichFont);
+
+        mFindSavedButton.setOnClickListener(this);
+        mFindPicturesButton.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -74,15 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 };
             }
         };
-    }
 
-    @Override
-    public void onClick(View v) {
-        if(v == mFindPicturesButton) {
-            Intent intent = new Intent(MainActivity.this, SplashActivity.class);
-            startActivity(intent);
-            Toast.makeText(MainActivity.this, "Hello there,We cherish you", Toast.LENGTH_LONG).show();
-        }
     }
 
 
@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
-        inflater.inflate(R.menu.menu_search, menu);
         return super.onCreateOptionsMenu(menu);
 
     }
@@ -125,6 +124,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+    @Override
+    public void onClick(View v) {
+
+        if(v == mFindPicturesButton) {
+            Intent intent = new Intent(MainActivity.this, SplashActivity.class);
+            startActivity(intent);
+        }
+
+        if (v == mFindSavedButton) {
+            Intent intent = new Intent(MainActivity.this, SavedImagesActivity.class);
+            startActivity(intent);
         }
     }
 }
